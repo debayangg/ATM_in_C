@@ -20,20 +20,22 @@ int main()
         {
             printf("New User identified\n");
             printf("Enter your name:\n");
-            scanf("%s",&user.name);
+            gets(user.name);
             printf("Enter amount in account:\n");
             scanf("%d",&user.amount);
             printf("Enter a PIN with a minimum of 8 characters:\n");
-            scanf("%s",&user.pin);
+            gets(user.pin);
             while(sizeof(user.pin)/sizeof(user.pin[0])<8)
             {
                 printf("Please provide a appropriate PIN:\n");
-                scanf("%s",&user.pin);
+                gets(user.pin);
             }
 
             
         }
-        else{
+
+        else
+        {
 
             printf("Options:\n");
             printf("1.View your balance\n");
@@ -72,11 +74,11 @@ int main()
             {
                 printf("Provide a new PIN:\n");
                 printf("Enter a PIN with a minimum of 8 characters:\n");
-                scanf("%s",&user.pin);
+                gets(user.pin);
                 while(sizeof(user.pin)/sizeof(user.pin[0])<8)
                 {
                     printf("Please provide a appropriate PIN:\n");
-                    scanf("%s",&user.pin);
+                    gets(user.pin);
                 }
             }
             else
