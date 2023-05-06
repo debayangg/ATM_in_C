@@ -18,16 +18,16 @@ int main()
     {
         if(user.amount<0)
         {
-            printf("New User identified");
-            printf("Enter your name: ");
+            printf("New User identified\n");
+            printf("Enter your name:\n");
             scanf("%s",&user.name);
-            printf("Enter amount in account:");
+            printf("Enter amount in account:\n");
             scanf("%d",&user.amount);
-            printf("Enter a PIN with a minimum of 8 characters:");
+            printf("Enter a PIN with a minimum of 8 characters:\n");
             scanf("%s",&user.pin);
             while(sizeof(user.pin)/sizeof(user.pin[0])<8)
             {
-                printf("Please provide a appropriate PIN:");
+                printf("Please provide a appropriate PIN:\n");
                 scanf("%s",&user.pin);
             }
 
@@ -35,53 +35,53 @@ int main()
         }
         else{
 
-            printf("Options:");
-            printf("1.View your balance");
-            printf("2.Withdraw money");
-            printf("3.Deposit money");
-            printf("4.Change PIN");
-            printf("Enter 0 to exit");
-            printf("Enter your choice:");
+            printf("Options:\n");
+            printf("1.View your balance\n");
+            printf("2.Withdraw money\n");
+            printf("3.Deposit money\n");
+            printf("4.Change PIN\n");
+            printf("Enter 0 to exit\n");
+            printf("Enter your choice:\n");
             scanf("%d",choice);
             if(choice==1)
             {
-                printf("Balance in your account:%d",user.amount);
+                printf("Balance in your account:%d\n",user.amount);
             }
             else if(choice==2)
             {
                 int amt=0;
-                printf("Enter amount to be withdrawn:");
+                printf("Enter amount to be withdrawn:\n");
                 scanf("%d",amt);
                 if(amt>user.amount)
-                printf("Your account doesn't have that amount");
+                printf("Your account doesn't have that amount\n");
                 else
                 {
                     user.amount-=amt;
-                    printf("Current account:%d",user.amount);
+                    printf("Current account:%d\n",user.amount);
                 }
             }
             else if(choice==3)
             {
                 int amt=0;
-                printf("Enter amount to be deposited:");
+                printf("Enter amount to be deposited:\n");
                 scanf("%d",amt);
                 user.amount+=amt;
-                printf("Current account:%d",user.amount);
+                printf("Current account:%d\n",user.amount);
             }
             else if(choice==4)
             {
-                printf("Provide a new PIN:");
-                printf("Enter a PIN with a minimum of 8 characters:");
+                printf("Provide a new PIN:\n");
+                printf("Enter a PIN with a minimum of 8 characters:\n");
                 scanf("%s",&user.pin);
                 while(sizeof(user.pin)/sizeof(user.pin[0])<8)
                 {
-                    printf("Please provide a appropriate PIN:");
+                    printf("Please provide a appropriate PIN:\n");
                     scanf("%s",&user.pin);
                 }
             }
             else
             {
-                printf("Wrong option inputted");
+                printf("Wrong option inputted\n");
             }
         }
         
