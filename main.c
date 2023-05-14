@@ -80,7 +80,7 @@ int main()
                 printf("Enter a PIN with a minimum of 8 characters:\n");
                 getchar();
                 scanf("%[^\n]",&user.pin);
-                while(sizeof(user.pin)/sizeof(user.pin[0])<8)
+                while(strlen(user.pin)<8)
                 {
                     printf("Please provide a appropriate PIN:\n");
                     getchar();
