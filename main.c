@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct acc_holder
 {
@@ -20,15 +21,18 @@ int main()
         {
             printf("New User identified\n");
             printf("Enter your name:\n");
-            gets(user.name);
+            scanf("%[^\n]",&user.name);
             printf("Enter amount in account:\n");
             scanf("%d",&user.amount);
             printf("Enter a PIN with a minimum of 8 characters:\n");
-            gets(user.pin);
-            while(sizeof(user.pin)/sizeof(user.pin[0])<8)
+            getchar();
+            scanf("%[^\n]",&user.pin);
+
+            while(strlen(user.pin)<8)
             {
                 printf("Please provide a appropriate PIN:\n");
-                gets(user.pin);
+                getchar();
+                scanf("%[^\n]",&user.pin);
             }
 
             
@@ -44,7 +48,7 @@ int main()
             printf("4.Change PIN\n");
             printf("Enter 0 to exit\n");
             printf("Enter your choice:\n");
-            scanf("%d",choice);
+            scanf("%d",&choice);
             if(choice==1)
             {
                 printf("Balance in your account:%d\n",user.amount);
@@ -53,7 +57,7 @@ int main()
             {
                 int amt=0;
                 printf("Enter amount to be withdrawn:\n");
-                scanf("%d",amt);
+                scanf("%d",&amt);
                 if(amt>user.amount)
                 printf("Your account doesn't have that amount\n");
                 else
@@ -66,7 +70,7 @@ int main()
             {
                 int amt=0;
                 printf("Enter amount to be deposited:\n");
-                scanf("%d",amt);
+                scanf("%d",&amt);
                 user.amount+=amt;
                 printf("Current account:%d\n",user.amount);
             }
@@ -74,13 +78,17 @@ int main()
             {
                 printf("Provide a new PIN:\n");
                 printf("Enter a PIN with a minimum of 8 characters:\n");
-                gets(user.pin);
+                getchar();
+                scanf("%[^\n]",&user.pin);
                 while(sizeof(user.pin)/sizeof(user.pin[0])<8)
                 {
                     printf("Please provide a appropriate PIN:\n");
-                    gets(user.pin);
+                    getchar();
+                    scanf("%[^\n]",&user.pin);
                 }
             }
+            else if(choice==0)
+            {}
             else
             {
                 printf("Wrong option inputted\n");
